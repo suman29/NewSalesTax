@@ -39,5 +39,4 @@ public class OtherProductsTest {
 
         assertEquals(actualOutput, expectedOutput, 0.05d);
     }
-
 }
