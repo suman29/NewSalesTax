@@ -2,6 +2,7 @@ package com.company;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.Is.*;
 
@@ -38,6 +39,17 @@ public class BookTest {
         double expectedOutput = 0.5;
 
         assertThat(actualOutput, is(expectedOutput));
+    }
+
+    @Test
+    public void shouldRepresentTheDetailsOfBookInProperFormat() {
+        Book book = new Book();
+        book.setProductDetails("book1", 10, true);
+
+        String actualString = book.toString();
+        String expectedString = "1 imported book1:10.0";
+
+        assertEquals(actualString,expectedString);
     }
 
 }
