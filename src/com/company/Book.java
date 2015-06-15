@@ -19,6 +19,9 @@ public class Book implements Products {
 
     @Override
     public double priceOnApplyingTax() {
-        return price;
+        double tax =price;
+        if(isImported)
+            return (tax+=0.05*tax);
+        return tax;
     }
 }

@@ -18,4 +18,15 @@ public class BookTest {
         assertThat(actualOutput, is(expectedOutput));
     }
 
+    @Test
+    public void shouldCalculateTotalTaxOfBook() {
+        Book book = new Book();
+        book.setProductDetails("book1", 10,true);
+
+        double actualOutput = book.priceOnApplyingTax();
+        double expectedOutput = 10.5;
+
+        assertThat(actualOutput, is(expectedOutput));
+    }
+
 }
