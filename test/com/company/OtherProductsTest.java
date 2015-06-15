@@ -39,4 +39,15 @@ public class OtherProductsTest {
 
         assertEquals(actualOutput, expectedOutput, 0.05d);
     }
+
+    @Test
+    public void shouldRepresentTheDetailsOfBookInProperFormat() {
+        OtherProducts otherProducts = new OtherProducts();
+        otherProducts.setProductDetails("CD", 12, false);
+
+        String actualString = otherProducts.toString();
+        String expectedString = "1 CD:12.0";
+
+        assertEquals(actualString,expectedString);
+    }
 }

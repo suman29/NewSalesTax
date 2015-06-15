@@ -25,4 +25,12 @@ public class OtherProducts implements Products {
             return (tax+=0.05*tax);
         return tax;
     }
+
+    @Override
+    public String toString() {
+        if(isImported)
+            return ("1 imported "+name+":"+price);
+        else
+            return ("1 "+name+":"+price);
+    }
 }
