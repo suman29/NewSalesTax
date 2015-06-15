@@ -19,6 +19,10 @@ public class OtherProducts implements Products {
 
     @Override
     public double priceOnApplyingTax() {
-        return price;
+        double tax = price;
+        tax+=0.10*tax;
+        if(isImported)
+            return (tax+=0.05*tax);
+        return tax;
     }
 }
