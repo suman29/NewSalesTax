@@ -14,7 +14,7 @@ public class ConsoleInputOutputTest {
         System.setIn(byteArrayInputStream);
         ConsoleInputOutput consoleInputOutput = new ConsoleInputOutput();
 
-        String actualInput = consoleInputOutput.takeUserInputForMainMenu();
+        String actualInput = consoleInputOutput.takeUserInputForAProduct();
         String expectedInput = "1 book at 12.49";
 
         assertEquals(expectedInput, actualInput);

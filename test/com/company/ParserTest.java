@@ -19,14 +19,14 @@ public class ParserTest {
 
     @Test
     public void shouldGiveAProductOnParsingTheUserInput() {
-        Parser parser = new Parser(mappedProducts);
-      Book book = new Book();
-//        book.setProductDetails("Book",10.0,false);
-//
-//        Products actualProduct = parser.getProduct("1 Book at 10");
-//        Products expectedProduct = book;
+        Parser parser = new Parser();
+        Book book = new Book();
+        book.setProductDetails("Book",10.0,false);
 
-        assertEquals(book,book);
+        Products actualProduct = parser.getProduct("1 Book at 10");
+        Products expectedProduct = book;
+
+        assertEquals(actualProduct,expectedProduct);
     }
 
 }

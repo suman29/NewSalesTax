@@ -5,17 +5,16 @@ import java.util.HashMap;
 public class Parser {
     private HashMap<String, Products> mappedProducts;
 
-    public Parser(HashMap<String, Products> mappedProducts) {
-       this.mappedProducts = mappedProducts;
+    public Parser() {
+        mappedProducts = new HashMap<>();
+        mappedProducts.put("Book", new Book());
+        mappedProducts.put("Other Products", new OtherProducts());
     }
 
     public Products getProduct(String userInput) {
 
         Products product = null;
-        String input[] = userInput.split(" ");
-        String productName;
-        double price;
-        boolean isImported;
+        String input[] = userInput.split("\\s+");
 
         if (input.length == 4) {
             product = productWhenLengthOfInputIsFour(input);
@@ -89,7 +88,7 @@ public class Parser {
         price = Float.parseFloat(input[3]);
         isImported = false;
 
-        product.setProductDetails(productName,price,isImported);
+        product.setProductDetails(productName, price, isImported);
         return product;
     }
 }

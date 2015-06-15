@@ -11,7 +11,7 @@ public class ConsoleInputOutput {
         br = new BufferedReader(new InputStreamReader(System.in));
     }
 
-    public String takeUserInputForMainMenu() {
+    public String takeUserInputForAProduct() {
         try {
             String input = br.readLine();
             return input;
