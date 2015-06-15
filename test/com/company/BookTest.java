@@ -52,4 +52,44 @@ public class BookTest {
         assertEquals(actualString,expectedString);
     }
 
+    @Test
+       public void shouldBeEqualToItself() {
+
+           Book firstBook = new Book();
+           boolean actual = firstBook.equals(firstBook);
+
+           assertEquals(true, actual);
+       }
+
+       @Test
+       public void shouldFollowSymmetricProperty() {
+           Book firstBook = new Book();
+           Book secondBook = new Book();
+           boolean actual = (firstBook.equals(secondBook) == secondBook.equals(firstBook));
+
+           assertEquals(true, actual);
+       }
+
+       @Test
+       public void shouldFollowTransitiveProperty() {
+           Book firstBook = new Book();
+           Book secondBook = new Book();
+           Book thirdBook = new Book();
+           boolean actual = firstBook.equals(secondBook) &&
+                   secondBook.equals(thirdBook) &&
+                   firstBook.equals(thirdBook);
+
+           assertEquals(true, actual);
+       }
+
+       @Test
+       public void shouldHaveSameHashCodeIfBooksAreEqual() {
+           Book firstBook = new Book();
+           Book secondBook = new Book();
+
+           boolean actual = firstBook.equals(secondBook) && (firstBook.hashCode() == secondBook.hashCode());
+
+           assertEquals(true, actual);
+       }
+
 }

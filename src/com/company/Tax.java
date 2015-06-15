@@ -1,6 +1,7 @@
 package com.company;
 
 public class Tax {
+    private  double tax;
 
     public double totalTax(Products product) {
         return product.priceOnApplyingTax();

@@ -13,7 +13,7 @@ public class OtherProductsTest {
         otherProducts.setProductDetails("CD", 12, false);
 
         double actualOutput = otherProducts.priceOnApplyingTax();
-        double expectedOutput = 12;
+        double expectedOutput = 13.2;
 
         assertThat(actualOutput, is(expectedOutput));
     }

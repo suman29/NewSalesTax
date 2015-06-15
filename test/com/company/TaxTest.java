@@ -29,4 +29,18 @@ public class TaxTest {
 
         assertEquals(expectedTax, actualTax, 0.05d);
     }
+
+    @Test
+    public void shouldPrintTotalTaxOfTheGivenProducts() {
+        Tax tax = new Tax();
+        Products product = new Book();
+        product.setProductDetails("Book", 10, true);
+
+        double actualTax = tax.salesTax(product);
+        double expectedTax = 0.5;
+
+        assertEquals(expectedTax, actualTax, 0.05d);
+    }
+
+
 }
