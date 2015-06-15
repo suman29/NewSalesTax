@@ -14,7 +14,7 @@ public class OtherProducts implements Products {
 
     @Override
     public double salesTax() {
-        return 0;
+        return priceOnApplyingTax()-price;
     }
 
     @Override
